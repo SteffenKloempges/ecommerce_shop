@@ -1,0 +1,18 @@
+.productItem__card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 10px 20px;
+    position: relative;
+
+    img {
+        width: 100%;
+        background-color: #F0F3F8;
+        border-radius: 12px;
+    }
+
+    a {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+}

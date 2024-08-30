@@ -1,0 +1,12 @@
+.schnick__schnack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product__list__grid {
+    background: #F0F3F8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+}

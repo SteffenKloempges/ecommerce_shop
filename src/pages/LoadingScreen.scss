@@ -1,0 +1,36 @@
+.loading {
+    height: 100vh;
+    background-color: #364FD4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    flex-direction: column;
+
+    img {
+        animation: spin 2s linear infinite;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 20px;
+
+        span {
+            display: inline-block;
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg)
+    }
+
+    50% {
+        transform: rotateZ(180deg)
+    }
+
+    100% {
+        transform: rotateZ(360deg)
+    }
+}
