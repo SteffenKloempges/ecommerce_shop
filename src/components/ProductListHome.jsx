@@ -1,20 +1,20 @@
-import ProductItem from "./ProductItem"
-import { ProductsFetch } from "../context/Context"
-import { useState, useContext, useEffect } from "react"
-import { Link } from "react-router-dom"
-import "./ProductListHome.scss"
+import ProductItem from "./ProductItem";
+import { ProductsFetch } from "../context/Context";
+import { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./ProductListHome.scss";
 
 
 const ProductListHome = () => {
-    const productsContext = useContext(ProductsFetch)
-    const [productList, setProductList] = useState([])
+    const productsContext = useContext(ProductsFetch);
+    const [productList, setProductList] = useState([]);
 
     useEffect(() => {
-        const sortByPopular = productsContext.products.products?.sort((a, b) => b.rating - a.rating)
-        setProductList(sortByPopular)
-    }, [productsContext])
+        let sortByPopular = [...productsContext.products];
+        sortByPopular.sort((a, b) => b.rating - a.rating);
+        setProductList(sortByPopular);
+    }, [productsContext]);
 
-    console.log(productList)
 
     return (
         <section>

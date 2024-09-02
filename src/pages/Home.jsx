@@ -1,18 +1,19 @@
 import CategorieBtnHome from "../components/CategorieBtnHome";
-import FilterBtnHome from "../components/FilterBtnHome";
+import NavBar from "../components/NavBar";
 import ProductListHome from "../components/ProductListHome";
 import SearchAndFilterBtn from "../components/SearchAndFilterBtn";
-import { CategoriesFetch } from "../context/Context";
+import "./Home.scss";
 
 const home = () => {
     return (
         <>
-            <header>
-                <h1>Find your favourite Product</h1>
+            <section className="home">
+                <h1 className="home__headline">Find your favourite Product</h1>
                 <SearchAndFilterBtn />
                 <CategorieBtnHome />
                 <ProductListHome />
-            </header>
+                <NavBar />
+            </section>
         </>
     );
 }

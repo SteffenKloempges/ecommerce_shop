@@ -1,7 +1,28 @@
-.categorie__btn__home {
+.categorie__home {
     display: flex;
-    gap: 10px;
-    margin: 20px 10px;
+    gap: 20px;
+    margin: 20px 0px 20px 20px;
     overflow-x: auto;
     scrollbar-width: none;
+
+    a {
+        color: #000;
+        text-decoration: none;
+        font-size: 12px;
+        font-family: "poppins-medium";
+
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 12px;
+        }
+    }
+
+    .categorie__home__btn {
+        text-align: center;
+
+    }
 }

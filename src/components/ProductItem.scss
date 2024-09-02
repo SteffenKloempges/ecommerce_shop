@@ -4,13 +4,31 @@
     padding: 10px 10px 20px;
     position: relative;
 
-    img {
+    .productItem__card__img {
         width: 100%;
         background-color: #F0F3F8;
         border-radius: 12px;
     }
 
-    a {
+    .productItem__card__rating {
+        font-family: "poppins-regular";
+        font-size: 9px;
+        color: #828B9A;
+    }
+
+    .productItem__card__title {
+        font-family: "poppins-semibold";
+        font-size: 14px;
+        color: #1E2126;
+    }
+
+    .productItem__card__price {
+        font-family: "poppins-medium";
+        font-size: 12px;
+        color: #364FD4;
+    }
+
+    .productItem__card__icon {
         position: absolute;
         right: 10px;
         bottom: 10px;

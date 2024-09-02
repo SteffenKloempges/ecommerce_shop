@@ -1,69 +1,56 @@
 import SearchAndFilterBtn from "../components/SearchAndFilterBtn";
-import { useContext, useState, useEffect } from "react"
+import { useContext, useState, useMemo } from "react";
 import { ProductsFetch } from "../context/Context";
 import ProductItem from "../components/ProductItem";
-import NavBar from "../components/NavBar";
-import "./AllProducts.scss";
 
-const allProducts = () => {
+const AllProducts = () => {
     const productsFetch = useContext(ProductsFetch);
     const [sortBy, setSortBy] = useState("");
 
-    console.log(productsFetch);
+    const sortedProducts = useMemo(() => {
+        if (!productsFetch?.products?.products) return [];
 
-
-    useEffect(() => {
-        let newSortedArr = [...productsFetch.products];
-        console.log(newSortedArr);
+        let newSortedArr = [...productsFetch.products.products];
         if (sortBy === "desc") {
-            console.log("a");
-            console.log(newSortedArr)
             newSortedArr.sort((a, b) => b.price - a.price);
         } else if (sortBy === "asc") {
-            console.log("b");
             newSortedArr.sort((a, b) => a.price - b.price);
         } else if (sortBy === "pop") {
-            console.log("c");
             newSortedArr.sort((a, b) => b.rating - a.rating);
-        } else {
-            productsFetch.setProducts(newSortedArr);
         }
-        productsFetch.setProducts(newSortedArr);
-    }, [sortBy]);
+        return newSortedArr;
+    }, [sortBy, productsFetch.products.products]);
 
     const sortedBy = (event) => {
         setSortBy(event.target.value);
     };
 
     return (
-        <section className="all__products">
+        <section>
             <SearchAndFilterBtn />
-            <form className="all__products__form">
-                <label className="all__products__form-label">
+            <form>
+                <label>
                     Sort by:
-                    <select
-                        name="" id=""
-                        onChange={sortedBy}
-                        className="all__products__form-select">
-                        <option value="pop">Popular</option>
+                    <select name="" id="" onChange={sortedBy}>
+                        <option value="">Select Filter</option>
                         <option value="asc">Lowest Price</option>
                         <option value="desc">Highest Price</option>
+                        <option value="pop">Popular</option>
                     </select>
                 </label>
             </form>
-            <section className="all__products__grid">
-                {productsFetch.products?.map((singleProducts) => <ProductItem
+            {sortedProducts.map((singleProducts) => (
+                <ProductItem
                     key={singleProducts.id}
                     id={singleProducts.id}
                     price={singleProducts.price}
                     rating={singleProducts.rating}
                     thumbnail={singleProducts.thumbnail}
                     title={singleProducts.title}
-                />)}
-            </section>
-            <NavBar />
+                />
+            ))}
         </section>
     );
-}
+};
 
-export default allProducts;
+export default AllProducts;

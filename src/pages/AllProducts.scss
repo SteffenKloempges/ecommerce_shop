@@ -1,0 +1,33 @@
+@use "../App.scss";
+
+.all__products {
+    background-color: #FCFCFC;
+
+    .all__products__form {
+        font-family: "poppins-medium";
+        font-size: 14px;
+        padding-left: 30px;
+
+        .all__products__form-label {
+            .all__products__form-select {
+                border: none;
+                background-color: #FCFCFC;
+                padding-left: 10px;
+                color: #364FD4;
+                appearance: none;
+                width: 150px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .all__products__grid {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 20px;
+    }
+}

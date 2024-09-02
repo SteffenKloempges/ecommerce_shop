@@ -2,6 +2,26 @@
 //       Generals
 //=========================
 
+@font-face {
+  font-family: "poppins-bold";
+  src: url("./assets/fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: "poppins-medium";
+  src: url("./assets/fonts/Poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: "poppins-semibold";
+  src: url("./assets/fonts/Poppins/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "poppins-regular";
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;

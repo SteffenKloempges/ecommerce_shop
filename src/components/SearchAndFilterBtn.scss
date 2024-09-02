@@ -1,0 +1,36 @@
+@use "../App.scss";
+
+.searchAndFilterForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+
+    .searchAndFilterForm__input {
+        width: 260px;
+        height: 60px;
+        border-radius: 12px;
+        background-color: #F0F3F8;
+        border: none;
+        padding-left: 15px;
+        color: #B9C1CC;
+
+        &:focus {
+            outline: 1px solid #364FD4;
+        }
+
+        &::placeholder {
+            color: #B9C1CC;
+            font-size: 14px;
+        }
+    }
+
+    .searchAndFilterForm__filterLink {
+        padding: 20px;
+        border-radius: 12px;
+        background-color: #364FD4;
+        display: flex;
+        color: #fff;
+    }
+}

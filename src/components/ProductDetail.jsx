@@ -8,7 +8,7 @@ const ProductDetail = () => {
     const navigate = useNavigate()
     const allProducts = useContext(ProductsFetch)
 
-    const singleProductFilter = allProducts.products.products?.filter((elt) => {
+    const singleProductFilter = allProducts.products.filter((elt) => {
         if (elt.id === Number(id)) {
             console.log(elt)
             return elt
@@ -19,8 +19,8 @@ const ProductDetail = () => {
         <section className="product__detail">
             <ChevronLeftIcon width="30px" onClick={() => navigate(-1)} />
             {singleProductFilter?.map((elt) =>
-                <>
-                    <article>
+                <section key={id}>
+                    <article >
                         <h3>{elt.title}</h3>
                         <img src={elt.thumbnail} alt={elt.description} />
                         <div>
@@ -38,8 +38,9 @@ const ProductDetail = () => {
                     <h3>Description</h3>
                     <p>{elt.description}</p>
                     <button>Add to Cart</button>
-                </>)}
-        </section>
+                </section>)
+            }
+        </section >
 
     );
 }
