@@ -8,6 +8,7 @@ import Products from './data/Products'
 import Categories from './data/Categories'
 import ProductDetail from './components/ProductDetail'
 import './App.scss'
+import ProductByCategory from './pages/ProductByCategory'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -27,6 +28,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/allProducts" element={<AllProducts />} />
+            <Route path="/category/:categoryName" element={<ProductByCategory />} />
           </Routes>
         </CategoriesFetch.Provider>
       </ProductsFetch.Provider>

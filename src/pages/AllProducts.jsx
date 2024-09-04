@@ -1,16 +1,14 @@
 import SearchAndFilterBtn from "../components/SearchAndFilterBtn";
 import { useContext, useState, useEffect } from "react"
 import { ProductsFetch } from "../context/Context";
-import ProductItem from "../components/ProductItem";
 import NavBar from "../components/NavBar";
 import "./AllProducts.scss";
+import ProductList from "../components/ProductList";
 
 const allProducts = () => {
     const productsFetch = useContext(ProductsFetch);
     const [sortBy, setSortBy] = useState("");
-
     console.log(productsFetch);
-
 
     useEffect(() => {
         let newSortedArr = [...productsFetch.products];
@@ -51,16 +49,9 @@ const allProducts = () => {
                     </select>
                 </label>
             </form>
-            <section className="all__products__grid">
-                {productsFetch.products?.map((singleProducts) => <ProductItem
-                    key={singleProducts.id}
-                    id={singleProducts.id}
-                    price={singleProducts.price}
-                    rating={singleProducts.rating}
-                    thumbnail={singleProducts.thumbnail}
-                    title={singleProducts.title}
-                />)}
-            </section>
+            <ProductList
+                productData={productsFetch.products}
+            />
             <NavBar />
         </section>
     );

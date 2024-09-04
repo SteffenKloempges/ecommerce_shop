@@ -1,0 +1,8 @@
+@use '../App.scss';
+
+.product__list__grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+}

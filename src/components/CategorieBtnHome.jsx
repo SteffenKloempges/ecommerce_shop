@@ -5,6 +5,7 @@ import "./CategorieBtnHome.scss";
 
 const CategorieBtnHome = () => {
     const categoryFetch = useContext(CategoriesFetch);
+    //console.log(categoryFetch)
 
     const icons = [
         "./category-icons/icons8-skin-care-48.png",
@@ -32,10 +33,15 @@ const CategorieBtnHome = () => {
         "./category-icons/icons8-watches-50.png",
     ];
 
+
     return (
         <div className="categorie__home">
             {categoryFetch.categories.map((elt, index) =>
-                <Link key={elt.slug}>
+                <Link
+                    key={elt.slug}
+                    to={`/category/${elt.name}`}
+                    state={elt.url}
+                >
                     <div className="categorie__home__btn">
                         <img src={icons[index]} alt="" />
                         <p>{elt.name}</p>
