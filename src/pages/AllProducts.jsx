@@ -8,7 +8,6 @@ import ProductList from "../components/ProductList";
 const allProducts = () => {
     const productsFetch = useContext(ProductsFetch);
     const [sortBy, setSortBy] = useState("");
-    console.log(productsFetch);
 
     useEffect(() => {
         let newSortedArr = [...productsFetch.products];
@@ -40,7 +39,6 @@ const allProducts = () => {
                 <label className="all__products__form-label">
                     Sort by:
                     <select
-                        name="" id=""
                         onChange={sortedBy}
                         className="all__products__form-select">
                         <option value="pop">Popular</option>

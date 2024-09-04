@@ -6,6 +6,7 @@ import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ProductsFetch } from "../context/Context";
 import "./Home.scss";
+import FilterOverlay from "../components/FilterOverlay";
 
 const home = () => {
 
@@ -21,10 +22,11 @@ const home = () => {
     return (
         <>
             <section className="home">
+                <FilterOverlay />
                 <h1 className="home__headline">Find your favourite Product</h1>
                 <SearchAndFilterBtn />
                 <CategorieBtnHome />
-                <div className="schnick__schnack">
+                <div className="home__productlist__headline">
                     <h2>Popular</h2>
                     <Link to="/allProducts">View all</Link>
                 </div>

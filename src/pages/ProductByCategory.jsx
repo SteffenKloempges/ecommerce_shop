@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ProductItem from "../components/ProductItem";
+import ProductList from "../components/ProductList";
+import NavBar from "../components/NavBar";
+import SearchAndFilterBtn from "../components/SearchAndFilterBtn";
 
 const ProductByCategory = () => {
     const url = useLocation();
@@ -16,19 +18,12 @@ const ProductByCategory = () => {
     }, []);
 
     return (
-        <section>
-
-            {productByCategoryState.map((elt) => {
-                console.log(elt)
-                return <ProductItem
-                    key={elt.id}
-                    id={elt.id}
-                    price={elt.price}
-                    rating={elt.rating}
-                    thumbnail={elt.thumbnail}
-                    title={elt.title}
-                />
-            })}
+        <section className="product__category">
+            <SearchAndFilterBtn />
+            <ProductList
+                productData={productByCategoryState}
+            />
+            <NavBar />
         </section>
     );
 }

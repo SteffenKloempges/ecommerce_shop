@@ -1,0 +1,11 @@
+@use "../App.scss";
+
+.filterOverlay__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1;
+    //dies muss noch gefixt werden
+    transform: all ease 0.3s;
+}
