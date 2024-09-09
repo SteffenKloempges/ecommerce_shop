@@ -1,0 +1,57 @@
+@use "../App.scss";
+
+.filterSite__wrapper {
+    background-color: #fff;
+    padding: 0 5% 10vh 5%;
+
+    h3 {
+        font-family: "poppins-semibold";
+        font-size: 16px;
+        padding: 20px 0;
+    }
+
+    .filterSite__choices--grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        button {
+            background-color: #fff;
+            border: none;
+            color: #5C6574;
+            font-family: "poppins-medium";
+            font-size: 12px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+        .filterSite--search--btn {
+            color: #fff;
+            display: block;
+            width: 90%;
+            margin: 20px auto;
+            border: none;
+            background-color: #364FD4;
+            border-radius: 12px;
+            padding: 20px;
+        }
+    }
+}
+
+.test {
+    label {
+        position: relative;
+
+        input {
+            position: absolute;
+            // background-color: red;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            appearance: none;
+        }
+    }
+}

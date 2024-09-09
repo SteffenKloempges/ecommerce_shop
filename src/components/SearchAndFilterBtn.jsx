@@ -1,21 +1,11 @@
 import { Link } from "react-router-dom";
-import { ShowFilterOverlay } from "../context/Context";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/16/solid";
-import { useContext } from "react";
 import "./SearchAndFilterBtn.scss";
 
 const SearchAndFilterBtn = () => {
-    const { showFilter, setShowFilter } = useContext(ShowFilterOverlay);
-
-    console.log(showFilter);
-
-    const changeShowFilter = (event) => {
-        event.preventDefault();
-        setShowFilter(!showFilter);
-    }
 
     return (
-        <form className="searchAndFilterForm" onSubmit={"return false"}>
+        <form className="searchAndFilterForm">
             <input
                 type="text"
                 name=""
@@ -23,12 +13,12 @@ const SearchAndFilterBtn = () => {
                 className="searchAndFilterForm__input"
                 placeholder={`🔍 Search`}
             />
-            <button
+            <Link
                 className="searchAndFilterForm__filter--btn"
-                onClick={changeShowFilter}
+                to="/filter"
             >
                 <AdjustmentsHorizontalIcon width={"20px"} />
-            </button>
+            </Link>
         </form>
     );
 }

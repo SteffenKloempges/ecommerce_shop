@@ -3,7 +3,6 @@ import { PlusCircleIcon } from "@heroicons/react/16/solid";
 import "./ProductItem.scss";
 
 const ProductItem = ({ id, rating, price, thumbnail, title }) => {
-    //console.log({ id, rating, price, thumbnail, title })
     return (
         <article className="productItem__card">
             <img src={thumbnail} alt={title} className="productItem__card__img" />
